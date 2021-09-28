@@ -5,14 +5,14 @@ function [full_path,dirname,np] = calculation_type(base_path,np,lm,use_lookup)
        if not(isfolder([path,dirname]))
           mkdir(path,dirname)
        end  
-       full_path = [path,dirname,'\'];
        np.th2 = linspace(np.th2_min,np.th2_max,np.th2_max/np.dth2); 
     else
       dirname = ['th2_',num2str(lm.th2)];
       path = [base_path,'Exact calculations\'];
       if not(isfolder([path,dirname]))
          mkdir(path,dirname)
+      end
+      np.th2=lm.th2; 
     end  
-      full_path = [path,dirname,'\'];
-      np.th2=lm.th2;
+    full_path = [path,dirname,'\'];
 end
