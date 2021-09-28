@@ -6,7 +6,7 @@ function [lp,sp,sc,np,lm]=setup_DFK_scan(lp,sp,sc,np)
     sp.mu=cnst.e_mass*sp.eEffMass*sp.hEffMass/(sp.eEffMass+sp.hEffMass); % [eV/c^2]
     %mu = 1*1.4*e_mass; % for Otobe Tests
     %sp.p_matr = sp.p_matr_au*(cnst.h_bar/cnst.a_bohr*cnst.c_light)^2; % [eV^2/c^2]
-    sp.p_matr = cnst.e_mass^2*(sp.BG/4/sp.mu); % [eV^2/c^2] Kane formula
+    sp.p_matr = cnst.e_mass^2*(sp.BG/4/sp.mu); % [eV^2/c^2] Kane formula; Needs to be clarified. I think its wrong by x2
     % Find laser-matter parameters
     lm = laser_matter(lp,sp);
     % Find parameters for numeric integration: E_max, d_thata_min
