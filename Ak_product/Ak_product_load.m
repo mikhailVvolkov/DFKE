@@ -1,6 +1,6 @@
 function [th1,ak_input]=Ak_product_load(full_path,lm,np,use_lookup)
-S = matfile([full_path,'\Ak_product.mat']);
-ak = load([full_path,'\ak.mat']);
+S = matfile([full_path,filesep,'Ak_product.mat']);
+ak = load([full_path,filesep,'ak.mat']);
 l_array = [-ak.maxl_int:ak.maxl_int];
 m_array = [-ak.m_max:ak.m_max];
 th1 = ak.th1(ak.th1<=np.th1_max);
