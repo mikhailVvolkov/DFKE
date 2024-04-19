@@ -5,4 +5,4 @@ function lm = laser_matter(lp,sp)
     lm.gamma_FKE=lm.U_pond/(cnst.h_bar*lp.w); % [Dimensionless]
     lm.gamma_Keldysh=sqrt(sp.BG/(2*lm.gamma_FKE*cnst.h_bar*lp.w)); % with Ip=bandgap
     lm.th2 = 0.5*lm.gamma_FKE; %
-end
+end 
