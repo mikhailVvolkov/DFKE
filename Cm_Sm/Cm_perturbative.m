@@ -1,5 +1,5 @@
 function Cm = Cm_perturbative(XUV,Eg,Up,th2,w,m)
-    power_real = @(x,n) x.^n.*heaviside(x);
+    power_real = @(x,n) x.^n.*my_heaviside(x);
     if m==0
         Cm_1 = 2*pi*power_real(XUV-Eg-Up,1/2);
         Amp_3 = 1/6*power_real(XUV-Eg-Up+w*cnst.h_bar,3/2) + 1/6*power_real(XUV-Eg-Up-w*cnst.h_bar,3/2) - 1/3*power_real(XUV-Eg,3/2);        
