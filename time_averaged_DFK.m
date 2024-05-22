@@ -2,7 +2,10 @@ function obs_av = time_averaged_DFK(lp,sp,sc,np,Cm,Sm)
     % Legacy. to be replaced with m = 0 selection
     m_max_store = np.m_max;
     np.m_max = 0;
-    JDOS_non_eq = JDOS_DFK(lp,sp,sc,np,Cm,Sm,ones(2*m_max_store+1,1));% cycle-averaged is Cm0 only
+    selected.m = ones(2*m_max_store+1,1);
+    selected.cos = 1;
+    selected.sin = 1;
+    JDOS_non_eq = JDOS_DFK(lp,sp,sc,np,Cm,Sm,selected);% cycle-averaged is Cm0 only
     np.m_max = m_max_store;
     
     %JDOS_eq = JDOS_const(sp.mu)*abs(sqrt(sc.XUV-sp.BG)).*heaviside(sc.XUV-sp.BG);
